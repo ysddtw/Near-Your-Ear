@@ -46,7 +46,7 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap'
         },
-        { rel: 'icon', type: 'image/jpeg', href: '/logo.jpg' }
+        { rel: 'icon', type: 'image/jpeg', href: 'logo.jpg' }
       ]
     }
   }
