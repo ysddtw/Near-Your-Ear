@@ -28,7 +28,7 @@ export default defineNuxtConfig({
           content:
             '耳東有爾首張 EP《應聲倒地 On the Floor》全平台上架，立即選擇你的串流服務收聽。'
         },
-        { property: 'og:image', content: 'https://ysddtw.github.io/Near-Your-Ear/img/cover.png' },
+        { property: 'og:image', content: 'https://ysddtw.github.io/Near-Your-Ear/logo.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: 'https://ysddtw.github.io/Near-Your-Ear/' },
         { name: 'twitter:title', content: '應聲倒地 On the Floor | 耳東有爾' },
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
           content:
             '耳東有爾首張 EP《應聲倒地 On the Floor》全平台上架，立即選擇你的串流服務收聽。'
         },
-        { name: 'twitter:image', content: 'https://ysddtw.github.io/Near-Your-Ear/img/cover.png' }
+        { name: 'twitter:image', content: 'https://ysddtw.github.io/Near-Your-Ear/logo.jpg' }
       ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap'
         },
-        { rel: 'icon', type: 'image/png', href: '/img/cover.png' }
+        { rel: 'icon', type: 'image/jpeg', href: '/logo.jpg' }
       ]
     }
   }
