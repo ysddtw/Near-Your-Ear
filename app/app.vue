@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-screen text-[#DFDEE0] flex items-center justify-center py-12 px-6 overflow-hidden before:absolute before:inset-0 before:-z-20 before:content-[''] before:bg-[url('/img/cover.png')] before:bg-cover before:bg-center before:scale-110 before:blur-3xl before:opacity-80"
+    class="relative min-h-screen text-[#DFDEE0] flex items-center justify-center py-12 px-6 overflow-hidden before:absolute before:inset-0 before:-z-20 before:content-[''] before:bg-[url('/img/cover.png')] before:bg-cover before:bg-center before:scale-110 before:blur-2xl before:opacity-80"
     style="font-family: 'Noto Sans TC', sans-serif"
   >
     <div class="absolute inset-0 -z-10 overflow-hidden">
@@ -12,11 +12,13 @@
       ></div>
     </div>
 
-    <UContainer class="max-w-xl">
-      <UCard
+    <div
+      class="ring-1 ring-gray-200 bg-black/5 border border-[#87B1CC]/40 backdrop-blur rounded-3xl shadow-2xl"
+    >
+      <div
         class="bg-black/5 border border-[#87B1CC]/40 backdrop-blur rounded-3xl shadow-2xl"
       >
-        <div class="flex flex-col items-center gap-6 px-6 py-6 sm:px-10">
+        <div class="flex flex-col items-center gap-6 px-6 py-8 sm:px-12">
           <div class="flex flex-col items-center gap-10 text-center">
             <div
               class="flex h-[240px] w-[240px] items-center justify-center overflow-hidden rounded-md border border-[#87B1CC]/50 bg-[#87B1CC]/10"
@@ -46,26 +48,22 @@
           </div>
 
           <div class="w-full space-y-3">
-            <UButton
+            <a
               v-for="platform in platforms"
               :key="platform.name"
-              :fileName="platform.fileName"
+              :href="platform.href"
               target="_blank"
               rel="noopener"
-              class="group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 pl-6 pr-4 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
-              size="lg"
-              variant="ghost"
-              trailing-icon="i-heroicons-arrow-up-right"
-              @click="openLink(platform.href)"
+              class="active:scale-[.95] group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 px-4 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
             >
               <div
-                class="flex items-center flex-shrink-0 gap-3 sm:gap-6 text-white"
+                class="flex items-center flex-shrink-0 gap-4 sm:gap-6 text-white"
               >
                 <div
-                  class="size-8 sm:size-14 rounded-lg overflow-hidden shrink-0 flex justify-center items-center"
+                  class="size-8 sm:size-12 rounded-lg overflow-hidden shrink-0 flex justify-center items-center"
                 >
                   <img
-                    :src="`/img/${platform.fileName}`"
+                    :src="platform.iconSrc"
                     :class="[platform.name == '抖音' ? 'w-full' : 'h-full']"
                   />
                 </div>
@@ -83,15 +81,33 @@
                   </span>
                 </div>
               </div>
-            </UButton>
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                />
+              </svg>
+            </a>
           </div>
         </div>
-      </UCard>
-    </UContainer>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const runtimeConfig = useRuntimeConfig()
+const baseURL = runtimeConfig.app.baseURL?.replace(/\/$/, '') ?? ''
+
 const platforms = [
   {
     name: 'Spotify',
@@ -178,8 +194,8 @@ const platforms = [
     fileName: 'resized_抖音.png',
     href: 'https://v.douyin.com/WI1YSJEiMcQ/'
   }
-]
-function openLink(href: string) {
-  window.open(href, '_blank', 'noopener')
-}
+].map((platform) => ({
+  ...platform,
+  iconSrc: `${baseURL}/img/${platform.fileName}`.replace('//', '/')
+}))
 </script>
