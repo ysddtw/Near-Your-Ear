@@ -7,7 +7,11 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   css: ['~/assets/css/tailwind.css', '~/assets/css/base.css'],
+  nitro: {
+    preset: 'github-pages'
+  },
   app: {
+    baseURL: '/Near-Your-Ear/',
     head: {
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
