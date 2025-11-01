@@ -58,12 +58,14 @@
               trailing-icon="i-heroicons-arrow-up-right"
               @click="openLink(platform.href)"
             >
-              <div class="flex items-center flex-shrink-0 gap-3 sm:gap-6">
+              <div
+                class="flex items-center flex-shrink-0 gap-3 sm:gap-6 text-white"
+              >
                 <div
                   class="size-8 sm:size-14 rounded-lg overflow-hidden shrink-0 flex justify-center items-center"
                 >
                   <img
-                    :src="`/icon/${platform.fileName}`"
+                    :src="`/img/${platform.fileName}`"
                     :class="[platform.name == '抖音' ? 'w-full' : 'h-full']"
                   />
                 </div>
