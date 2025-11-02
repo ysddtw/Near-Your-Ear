@@ -18,10 +18,10 @@
       <div
         class="bg-black/5 border border-[#87B1CC]/40 backdrop-blur rounded-3xl shadow-2xl"
       >
-        <div class="flex flex-col items-center gap-6 px-6 py-8 sm:px-12">
-          <div class="flex flex-col items-center gap-10 text-center">
+        <div class="flex flex-col items-center gap-5 px-4 py-8 sm:px-12">
+          <div class="flex flex-col items-center gap-6 text-center">
             <div
-              class="flex h-[240px] w-[240px] items-center justify-center overflow-hidden rounded-md border border-[#87B1CC]/50 bg-[#87B1CC]/10"
+              class="flex h-[200px] w-[200px] items-center justify-center overflow-hidden rounded-lg border border-[#87B1CC]/50 bg-[#87B1CC]/10"
             >
               <img
                 src="/img/cover.png"
@@ -30,8 +30,8 @@
               />
             </div>
 
-            <div class="flex flex-col items-center gap-5">
-              <img src="/img/title.png" class="w-64 sm:w-72" />
+            <div class="flex flex-col items-center gap-3">
+              <img src="/img/title.png" class="w-32 sm:w-48" />
               <!-- <h1 class="text-3xl font-semibold text-[#87B1CC] sm:text-4xl">
                 耳東有爾
               </h1> -->
@@ -54,10 +54,10 @@
               :href="platform.href"
               target="_blank"
               rel="noopener"
-              class="active:scale-[.95] group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 px-4 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
+              class="active:scale-[.95] gap-3 group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 px-4 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
             >
               <div
-                class="flex items-center flex-shrink-0 gap-4 sm:gap-6 text-white"
+                class="flex items-center flex-shrink-0 gap-3 sm:gap-6 text-white"
               >
                 <div
                   class="size-8 sm:size-12 rounded-lg overflow-hidden shrink-0 flex justify-center items-center"
@@ -69,9 +69,9 @@
                 </div>
 
                 <div class="flex flex-col text-left">
-                  <span>{{ platform.name }}</span>
+                  <span class="text-sm sm:text-base">{{ platform.name }}</span>
                   <span
-                    class="text-xs font-normal uppercase tracking-[0.1em] sm:tracking-[0.25em] text-[#DFDEE0]/50"
+                    class="text-xs font-normal uppercase tracking-[0.05em] sm:tracking-[0.25em] text-[#DFDEE0]/50"
                   >
                     {{
                       platform.name == 'iTunes'
@@ -88,7 +88,7 @@
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-6"
+                class="size-5 sm:size-6"
               >
                 <path
                   stroke-linecap="round"
