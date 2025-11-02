@@ -54,6 +54,7 @@
               :href="platform.href"
               target="_blank"
               rel="noopener"
+              @click="handleLinkClick"
               class="active:scale-[.95] gap-3 group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 px-6 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
             >
               <div
@@ -107,6 +108,20 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig()
 const baseURL = runtimeConfig.app.baseURL?.replace(/\/$/, '') ?? ''
+const RICK_ROLL_URL = 'https://youtu.be/dQw4w9WgXcQ' as const
+
+const handleLinkClick = (event: MouseEvent) => {
+  if (event.defaultPrevented) return
+  if (event.button !== 0) return
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+  if (Math.random() >= 0.01) return
+
+  event.preventDefault()
+
+  if (typeof window !== 'undefined') {
+    window.open(RICK_ROLL_URL, '_blank', 'noopener')
+  }
+}
 
 const platforms = [
   {
