@@ -18,7 +18,7 @@
       <div
         class="bg-black/5 border border-[#87B1CC]/40 backdrop-blur rounded-3xl shadow-2xl"
       >
-        <div class="flex flex-col items-center gap-5 px-4 py-8 sm:px-12">
+        <div class="flex flex-col items-center gap-5 px-8 py-8 sm:px-12">
           <div class="flex flex-col items-center gap-6 text-center">
             <div
               class="flex h-[200px] w-[200px] items-center justify-center overflow-hidden rounded-lg border border-[#87B1CC]/50 bg-[#87B1CC]/10"
@@ -54,7 +54,7 @@
               :href="platform.href"
               target="_blank"
               rel="noopener"
-              class="active:scale-[.95] gap-3 group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 px-4 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
+              class="active:scale-[.95] gap-3 group flex w-full items-center justify-between rounded-2xl border border-transparent bg-[#040000]/60 py-4 px-6 text-base font-medium text-[#DFDEE0] transition hover:border-[#87B1CC] hover:bg-[#87B1CC]/20 hover:text-[#87B1CC] duration-200"
             >
               <div
                 class="flex items-center flex-shrink-0 gap-3 sm:gap-6 text-white"
@@ -68,7 +68,7 @@
                   />
                 </div>
 
-                <div class="flex flex-col text-left">
+                <div class="flex flex-col gap-0.5 sm:gap-1 text-left">
                   <span class="text-sm sm:text-base">{{ platform.name }}</span>
                   <span
                     class="text-xs font-normal uppercase tracking-[0.05em] sm:tracking-[0.25em] text-[#DFDEE0]/50"
